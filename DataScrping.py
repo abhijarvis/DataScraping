@@ -1,5 +1,7 @@
 print('DataScrping')
 import urllib.request
+import requests
+from bs4 import BeautifulSoup
 
 # URL of the web page to fetch
 url=input('Input the URL to scrap - > ')
@@ -15,10 +17,10 @@ try:
     html_content = data.decode('utf-8')
     
     # Print the HTML content of the web page
-    print(html_content)
+    print('HTML CONTENET '+html_content)
+
     file1 = open("extract.txt", "w")
     file1.writelines(html_content)
     file1.close()
-
 except Exception as e:
     print("Error fetching URL:", e)
